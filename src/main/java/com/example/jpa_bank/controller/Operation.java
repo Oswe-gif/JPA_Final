@@ -36,6 +36,11 @@ public class Operation {
     {
         return userService.createUser(userDto);
     }
+    @GetMapping(path = "/account/check-accounts/{idDocument}")
+    public String getAllAccounts(@PathVariable int idDocument)
+    {
+        return userService.consultAccounts(idDocument);
+    }
 
     @PostMapping(path = "/transaction/money-sender")
     public String doTransaction(@RequestBody TransactionDto transactionDto)
