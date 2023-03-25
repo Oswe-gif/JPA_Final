@@ -18,7 +18,7 @@ public class UserEntity {
     @Id
     private Integer document;
     private String name;
-    private String lastname;
-    private String dateCreated;
+    private String last_name;
+    private String date_created;
 
 }
