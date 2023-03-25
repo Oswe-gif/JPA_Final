@@ -20,8 +20,8 @@ public class TransactionEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-    private String origen;
-    private String destination;
+    private int origen;
+    private int destination;
     private int amount;
     private BigInteger transaccionId;
     private BigInteger cuentaDestino;
