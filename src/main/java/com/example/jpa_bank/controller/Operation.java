@@ -31,10 +31,16 @@ public class Operation {
     {
         return account.checkBalance(idAccount);
     }
-    @PostMapping(path = "/account/savings-user")
+    @PostMapping(path = "/user/savings-user")
     public String createUser(@RequestBody UserDto userDto)
     {
         return userService.createUser(userDto);
+    }
+
+    @PostMapping(path = "/transaction/money-sender")
+    public String doTransaction(@RequestBody TransactionDto transactionDto)
+    {
+        return transactionalService.doTransaction(transactionDto);
     }
 
 }
