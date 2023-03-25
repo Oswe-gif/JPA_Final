@@ -7,12 +7,12 @@ import java.math.BigInteger;
 @Data
 public class TransactionDto {
     private Integer id;
-    private String origen;
-    private String destination;
+    private int origen;
+    private int destination;
     private int amount;
-    private BigInteger transaccionId;
-    private BigInteger cuentaDestino;
-    private BigInteger cuentaOrigen;
+    private int transaccionId;
+    private int cuentaDestino;
+    private int cuentaOrigen;
     private int monto;
 
 }
