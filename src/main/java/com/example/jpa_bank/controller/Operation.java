@@ -6,10 +6,7 @@ import com.example.jpa_bank.controller.dto.TransactionDto;
 import com.example.jpa_bank.service.AccountService;
 import com.example.jpa_bank.service.TransactionalService;
 import lombok.AllArgsConstructor;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @AllArgsConstructor
 @RestController
@@ -25,6 +22,11 @@ public class Operation {
     public String depositMoney(@RequestBody DepositMoneyUserDto depositMoneyUserDto)
     {
         return account.depositMoney(depositMoneyUserDto);
+    }
+    @GetMapping(path = "/account/check-balance/{idAccount}")
+    public String checkBalancene(@PathVariable int idAccount)
+    {
+        return account.checkBalance(idAccount);
     }
 
 
