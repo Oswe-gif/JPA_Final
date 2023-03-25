@@ -3,6 +3,7 @@ package com.example.jpa_bank.service;
 import com.example.jpa_bank.controller.dto.AccountDto;
 import com.example.jpa_bank.controller.dto.DepositMoneyUserDto;
 import com.example.jpa_bank.entity.AccountEntity;
+import com.example.jpa_bank.entity.UserEntity;
 import com.example.jpa_bank.repository.AccountRepository;
 import com.example.jpa_bank.repository.UserRepository;
 import lombok.AllArgsConstructor;
@@ -39,6 +40,12 @@ public class AccountService {
             System.out.println(e);
             return "Your account has NOT been recharged";
         }
+
+    }
+    public String checkBalance(int accountNumber) {
+        AccountEntity actualAccount = accountRepository.findById(accountNumber).orElse(new AccountEntity());
+        UserEntity actualuser = userRepository.findById(actualAccount.getUser()).orElse(new UserEntity());
+        return "The user: " +actualuser.getName() +" Has $"+actualAccount.getMoney()+" with account number: "+accountNumber;
 
     }
 
