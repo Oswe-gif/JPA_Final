@@ -6,7 +6,7 @@ import java.math.BigInteger;
 
 @Data
 public class TransactionDto {
-    private Integer id;
+    private int id;
     private int origen;
     private int destination;
     private int amount;
