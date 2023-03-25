@@ -17,7 +17,7 @@ public class AccountService {
     public String insertAccount(AccountDto accountDto)
     {
 
-        if(this.userRepository.existsById(accountDto.getUser()))
+        if(this.userRepository.existsById(accountDto.getUser()) && accountRepository.getAllAccounts(accountDto.getUser()).size()<=4)
         {
             accountRepository.save(new AccountEntity(accountDto.getId(),accountDto.getType(),accountDto.getMoney(),accountDto.getDate_created(),accountDto.getUser()));
             return "The account was created";
