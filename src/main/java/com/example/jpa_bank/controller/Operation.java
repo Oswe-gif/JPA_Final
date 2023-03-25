@@ -3,8 +3,10 @@ package com.example.jpa_bank.controller;
 import com.example.jpa_bank.controller.dto.AccountDto;
 import com.example.jpa_bank.controller.dto.DepositMoneyUserDto;
 import com.example.jpa_bank.controller.dto.TransactionDto;
+import com.example.jpa_bank.controller.dto.UserDto;
 import com.example.jpa_bank.service.AccountService;
 import com.example.jpa_bank.service.TransactionalService;
+import com.example.jpa_bank.service.UserService;
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
@@ -12,6 +14,7 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 public class Operation {
     private AccountService account;
+    private UserService userService;
     private TransactionalService transactionalService;
     @PostMapping(path = "/account/savings-account")
     public String createAccount(@RequestBody AccountDto accountDto)
@@ -28,6 +31,10 @@ public class Operation {
     {
         return account.checkBalance(idAccount);
     }
-
+    @PostMapping(path = "/account/savings-user")
+    public String createUser(@RequestBody UserDto userDto)
+    {
+        return userService.createUser(userDto);
+    }
 
 }
