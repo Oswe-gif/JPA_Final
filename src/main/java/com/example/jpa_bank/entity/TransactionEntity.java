@@ -23,10 +23,6 @@ public class TransactionEntity {
     private int origen;
     private int destination;
     private int amount;
-    private BigInteger transaccionId;
-    private BigInteger cuentaDestino;
-    private BigInteger cuentaOrigen;
-    private int monto;
 
 
 }
