@@ -10,9 +10,5 @@ public class TransactionDto {
     private int origen;
     private int destination;
     private int amount;
-    private int transaccionId;
-    private int cuentaDestino;
-    private int cuentaOrigen;
-    private int monto;
 
 }
