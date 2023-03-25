@@ -1,6 +1,7 @@
 package com.example.jpa_bank.service;
 
 import com.example.jpa_bank.controller.dto.AccountDto;
+import com.example.jpa_bank.controller.dto.DepositMoneyUserDto;
 import com.example.jpa_bank.entity.AccountEntity;
 import com.example.jpa_bank.repository.AccountRepository;
 import com.example.jpa_bank.repository.UserRepository;
@@ -25,5 +26,21 @@ public class AccountService {
             return "Failed to create a account";
         }
     }
+
+    public String depositMoney(DepositMoneyUserDto depositMoneyUserDto)
+    {
+
+        try {
+            accountRepository.depositMoney(depositMoneyUserDto.getMoneyAmount(), depositMoneyUserDto.getAccountNumber());
+            return "Your account has been recharged ";
+        }
+        catch (Exception e)
+        {
+            System.out.println(e);
+            return "Your account has NOT been recharged";
+        }
+
+    }
+
 
 }
