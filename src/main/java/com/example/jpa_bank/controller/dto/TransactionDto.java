@@ -1,8 +1,5 @@
 package com.example.jpa_bank.controller.dto;
-
 import lombok.Data;
-
-import java.math.BigInteger;
 
 @Data
 public class TransactionDto {

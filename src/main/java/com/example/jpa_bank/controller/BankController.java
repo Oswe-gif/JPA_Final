@@ -1,18 +1,13 @@
 package com.example.jpa_bank.controller;
 
-import com.example.jpa_bank.controller.dto.AccountDto;
-import com.example.jpa_bank.controller.dto.DepositMoneyUserDto;
-import com.example.jpa_bank.controller.dto.TransactionDto;
-import com.example.jpa_bank.controller.dto.UserDto;
-import com.example.jpa_bank.service.AccountService;
-import com.example.jpa_bank.service.TransactionalService;
-import com.example.jpa_bank.service.UserService;
+import com.example.jpa_bank.controller.dto.*;
+import com.example.jpa_bank.service.*;
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
 @AllArgsConstructor
 @RestController
-public class Operation {
+public class BankController {
     private AccountService account;
     private UserService userService;
     private TransactionalService transactionalService;
@@ -41,7 +36,6 @@ public class Operation {
     {
         return userService.consultAccounts(idDocument);
     }
-
     @PostMapping(path = "/transaction/money-sender")
     public String doTransaction(@RequestBody TransactionDto transactionDto)
     {

@@ -1,5 +1,4 @@
 package com.example.jpa_bank.controller.dto;
-
 import lombok.Data;
 
 @Data
