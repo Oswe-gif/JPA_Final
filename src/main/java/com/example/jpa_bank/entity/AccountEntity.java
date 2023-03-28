@@ -19,6 +19,6 @@ public class AccountEntity {
     private Integer id;
     private String type;
     private int money;
-    private String date_created;
+    private String dateCreated;
     private int user;
 }

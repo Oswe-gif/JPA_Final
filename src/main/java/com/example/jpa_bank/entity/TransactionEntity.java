@@ -1,8 +1,5 @@
 package com.example.jpa_bank.entity;
 
-import java.math.BigInteger;
-import java.util.Set;
-
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
